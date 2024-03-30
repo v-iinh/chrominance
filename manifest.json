@@ -5,10 +5,6 @@
         "32": "icon.png"
     },
     "version": "1.0.0",
-    "background": {
-        "service_worker": "service_worker.js",
-        "type": "module"
-    },
     "action": {
         "default_popup": "index.html"
     },

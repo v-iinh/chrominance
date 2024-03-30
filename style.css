@@ -1,0 +1,21 @@
+body {
+    background-color: rgb(61, 61, 61);
+    height: 300px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.changeBackgroundColor {
+    flex-direction: row; 
+    display: flex;
+}
+
+/* Add this CSS to your style.css file */
+.element-container {
+    margin-bottom: 10px;
+}
+
+input[type="color"] {
+    margin-right: 5px;
+}
