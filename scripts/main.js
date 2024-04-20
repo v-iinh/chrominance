@@ -97,8 +97,8 @@ function updateContrast() {
 
     document.getElementById("ratio").innerHTML = "Contrast Ratio:" + "<br>" + arrContrast[3];
     document.getElementById("textContrast").innerHTML = "Texts:" + "<br>" + arrContrast[6];
-    document.getElementById("componentsContrast").innerHTML = "Components" + "<br>" + arrContrast[8];
-    document.getElementById("headlinesContrast").innerHTML = "Headlines" + "<br>" + arrContrast[4];
+    document.getElementById("componentsContrast").innerHTML = "Components:" + "<br>" + arrContrast[8];
+    document.getElementById("headlinesContrast").innerHTML = "Headlines:" + "<br>" + arrContrast[4];
 }
 
 function clickedContrast() {
