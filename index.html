@@ -7,15 +7,18 @@
     <title>Chrominance</title>
 </head>
 <body>
-    <div class="changeBackgroundColor">
-        <input type="color" id="colorPicker">
-        <button id="backgroundButton">Background Color</button>
+    <input type="color" id="colorPicker" style="margin-left: -1.5px; width: 0px; height: 00px; margin-bottom: 5px;">
+    <div class="selectRGB">
+        <input class="rgb" id="red">
+        <input class="rgb" id="green">
+        <input class="rgb" id="blue">
     </div>
-    <div class="changeText">
-        <input type="color" id="colorPicker1">
-        <button id="textButton">Text Color</button>
+    <div class="selectHex">
+        <input class="hex">
     </div>
-    <div id="elementsList"></div>
+    <div id="analogic">text</div>
+    <button id="dropper">Eyedropper</button>
+    <button id="enter">ENTER</button>
     <script src="index.js"></script>
 </body>
 </html>
