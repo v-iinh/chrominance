@@ -1,0 +1,37 @@
+body {
+    height: 233px; 
+    width: 245px;
+    background-color: white;
+    margin: 0;
+}
+
+.nav {
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 45px;
+    width: 100%;
+}
+
+.nav > div {
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
+}
+
+a {
+    color: #75797e;
+}
+
+a:hover {
+    color: #4285f4;
+}
+
+i {
+    margin-top: 5px;
+}
+

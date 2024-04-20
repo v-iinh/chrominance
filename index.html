@@ -3,22 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Chrominance</title>
+    <title>Chrominance TEST</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/classic.css">
+    <link rel="stylesheet" href="styles/pickr.css">
 </head>
 <body>
-    <input type="color" id="colorPicker" style="margin-left: -1.5px; width: 0px; height: 00px; margin-bottom: 5px;">
-    <div class="selectRGB">
-        <input class="rgb" id="red">
-        <input class="rgb" id="green">
-        <input class="rgb" id="blue">
-    </div>
-    <div class="selectHex">
-        <input class="hex">
-    </div>
-    <div id="analogic">text</div>
-    <button id="dropper">Eyedropper</button>
-    <button id="enter">ENTER</button>
-    <script src="index.js"></script>
+    <div class="nav">
+        <div><a id="search" style="color: #4285f4;"><i class="fas fa-search"></i></a></div>
+        <div><a id="dropper"><i class="fas fa-eye-dropper"></i></a></div>
+        <div><a id="palette"><i class="fas fa-palette"></i></a></div>
+        <div><a id="contrast"><i class="fas fa-circle-half-stroke"></i></a></div>
+    </div>    
+    <!-- Color Picker : Search Logo -->
+    <!-- Eyedropper Tool : Dropper Logo -->
+    <!-- Palette Picker : Palette Logo -->
+    <!-- Contrast Checker : Half and Half Logo -->
+    <!-- Gradient Generator : ???-->
+    <div class='color-picker'></div>
+    <!-- <div class="color-name">White</div> -->
+    <script src="scripts/pickr.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/names.js"></script>
 </body>
 </html>
