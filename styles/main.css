@@ -35,7 +35,7 @@ i {
     margin-top: 5px;
 }
 
-.parent {
+.parent_1, .parent_2 {
     position: absolute;
     height: 15em;
     width: 229.5px;
@@ -75,4 +75,69 @@ i {
 #row1 {
     margin-bottom: 7px;
     margin-top: 1.5px;
+}
+
+.parent_2 {
+    display: none;
+}
+
+#foreground, #background {
+    color: #75797e;
+    text-align: left;
+    transition: all .2s;
+    border-radius: .15em;
+    background: #f1f3f4;
+    cursor: text;
+    outline: none;
+    letter-spacing: .07em;
+    font-size: .85em;
+    width: 162px;
+    margin-bottom: 7px;
+    height: 25px;
+    margin-right: 7px;
+    padding-left: .5em;
+    border: 2.5px solid #f1f3f4;
+}
+
+#foreground:hover, #background:hover {
+    filter: brightness(.975);
+}
+
+#foreground:focus, #background:focus {
+    border-color: #4286f4b6;
+    box-shadow: 0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(85, 83, 255, 0.03);
+    transition: .3s;
+}
+
+
+#foregroundColor, #backgroundColor {
+    height: 32px;
+    width: 35px;
+    background-color: #f1f3f4;
+    border-radius: .15em;
+}
+
+.inputContainer, .displayContainer_1, .displayContainer_2 {
+    display: flex;
+    flex-direction: row;
+}
+
+#ratio, #textContrast, #headlinesContrast, #componentsContrast {
+    width: 102px;
+    height: 34px;
+    background-color: #f1f3f4;
+    border-radius: .15em;
+    text-align: center;
+    padding-top: 3.5px;
+    letter-spacing: .07em;
+    font-size: .85em;
+    color: #75797e;
+}
+
+#ratio, #headlinesContrast {
+    margin-right: 7px;
+}
+
+#ratio, text{
+    margin-bottom: 7px;
 }

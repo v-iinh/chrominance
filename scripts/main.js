@@ -10,6 +10,9 @@ function resetIcons() {
     document.querySelectorAll('.nav i').forEach(icon => {
         icon.style.color = "#75797e";
         document.querySelector('.pcr-app.visible').style.display = 'flex';
+        document.querySelector('.parent_2').style.display = 'none'; 
+        document.getElementById("row1").style.display = "flex";
+        document.getElementById("row2").style.display = "flex";
     });
 }
 
@@ -75,14 +78,72 @@ function palette(hexColor, mode) {
     });
 }
 
+function updateContrast() {
+    var foregroundInput = document.getElementById("foreground");
+    var backgroundInput = document.getElementById("background");
+    var foregroundColor = document.getElementById("foregroundColor");
+    var backgroundColor = document.getElementById("backgroundColor");
+
+    foregroundColor.style.backgroundColor = foregroundInput.value;
+    backgroundColor.style.backgroundColor = backgroundInput.value;
+
+    document.getElementById("foreground").addEventListener("input", function(){
+        checkColors(foregroundInput.value.replace("#", "").toString(), backgroundInput.value.replace("#", "").toString());
+    });
+    document.getElementById("background").addEventListener("input", function(){
+        checkColors(foregroundInput.value.replace("#", "").toString(), backgroundInput.value.replace("#", "").toString());
+    });
+
+    document.getElementById("ratio").innerHTML = "Contrast Ratio:" + "<br>" + arrContrast[3];
+    document.getElementById("textContrast").innerHTML = "Texts:" + "<br>" + arrContrast[6];
+    document.getElementById("componentsContrast").innerHTML = "Components" + "<br>" + arrContrast[8];
+    document.getElementById("headlinesContrast").innerHTML = "Headlines" + "<br>" + arrContrast[4];
+}
+
 function clickedContrast() {
     resetIcons(); 
-    document.querySelector('#contrast i').style.color = "#4285f4"; 
+    document.querySelector('#contrast i').style.color = "#4285f4";
+    document.querySelector('.pcr-app.visible').style.display = 'none'; 
+    document.querySelector('.parent_2').style.display = 'flex'; 
+    document.getElementById("row1").style.display = "none";
+    document.getElementById("row2").style.display = "none";
+
+    updateContrast();
+    document.getElementById("foreground").addEventListener("input", updateContrast);
+    document.getElementById("background").addEventListener("input", updateContrast);
+}
+
+async function changeBackgroundColor() {
+    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+        let tab = tabs[0];
+        chrome.scripting.executeScript({
+            target: { tabId: tab.id },
+            func: () => {
+                const html = document.querySelector("html");
+                const media = document.querySelectorAll("img, picture, video");
+                const isFiltered = html.style.filter === "invert(1) hue-rotate(180deg)";
+
+                if (isFiltered) {
+                    html.style.filter = "";
+                    media.forEach((mediaItem) => {
+                        mediaItem.style.filter = "";
+                    });
+                } else {
+                    html.style.filter = "invert(1) hue-rotate(180deg)";
+                    media.forEach((mediaItem) => {
+                        mediaItem.style.filter = "invert(1) hue-rotate(180deg)";
+                    });
+                }
+            }
+        });
+    });
 }
 
 function clickedTheme() {
     resetIcons(); 
     document.querySelector('#theme i').style.color = "#4285f4"; 
+
+    changeBackgroundColor();
 }
 
 function clickedGradient() {
