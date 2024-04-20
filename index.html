@@ -11,20 +11,26 @@
 </head>
 <body>
     <div class="nav">
-        <div><a id="search" style="color: #4285f4;"><i class="fas fa-search"></i></a></div>
-        <div><a id="dropper"><i class="fas fa-eye-dropper"></i></a></div>
+        <div><a id="dropper" style="color: #4285f4;"><i class="fas fa-eye-dropper"></i></a></div>
         <div><a id="palette"><i class="fas fa-palette"></i></a></div>
         <div><a id="contrast"><i class="fas fa-circle-half-stroke"></i></a></div>
+        <div><a id="theme"><i class="fas fa-sun"></i></a></div>
+        <div><a id="gradient"><i class="fas fa-dice-two"></i></a></div>
     </div>    
-    <!-- Color Picker : Search Logo -->
-    <!-- Eyedropper Tool : Dropper Logo -->
-    <!-- Palette Picker : Palette Logo -->
-    <!-- Contrast Checker : Half and Half Logo -->
-    <!-- Gradient Generator : ???-->
     <div class='color-picker'></div>
-    <!-- <div class="color-name">White</div> -->
+    <div class="parent">
+        <div id="row1">
+            <div id="one"></div>
+            <div id="two"></div>
+            <div id="three"></div>
+        </div>
+        <div id="row2">
+            <div id="four"></div>
+            <div id="five"></div>
+            <div id="six"></div>
+        </div>
+    </div>
     <script src="scripts/pickr.js"></script>
     <script src="scripts/main.js"></script>
-    <script src="scripts/names.js"></script>
 </body>
 </html>

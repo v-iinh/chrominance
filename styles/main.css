@@ -35,3 +35,44 @@ i {
     margin-top: 5px;
 }
 
+.parent {
+    position: absolute;
+    height: 15em;
+    width: 229.5px;
+    margin-left: 7px;
+    margin-top: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    opacity: 1;
+    border-radius: .1em;
+    box-shadow: 0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
+}
+
+#one, #two, #three, #four, #five, #six {
+    height: 77px;
+    width: 66px;
+    background-color: #dbdbdb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 .15em 1.5em 0 rgba(0,0,0,.1),0 0 1em 0 rgba(0,0,0,.03);
+    border-radius: .25em;
+}
+
+#two, #five {
+    margin-right: 7px;
+    margin-left: 7px;
+}
+
+#row1, #row2 {
+    display: flex;
+    flex-direction: row;
+}
+
+#row1 {
+    margin-bottom: 7px;
+    margin-top: 1.5px;
+}
