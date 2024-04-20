@@ -1,32 +1,26 @@
 let arrContrast = ["NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN", "NaN"];
-// json-two.html?f=000000&b=ffffff
-
 var foregroundHex;
 var backgroundHex;
 var colorData;
 
-// Check if param exists
 var field = 'f';
 var url = window.location.href;
 if (url.indexOf('?' + field + '=') != -1) {
-    // return true;
     foregroundHex = getUrlVariable('f');
     backgroundHex = getUrlVariable('b');
     checkColors(foregroundHex, backgroundHex);
 
 } else if (url.indexOf('&' + field + '=') != -1) {
-    // return true;
     foregroundHex = getUrlVariable('f');
     backgroundHex = getUrlVariable('b');
     checkColors(foregroundHex, backgroundHex);
 }
 
-// Get Url Parameter
 function getUrlVariable(param) {
     var vars = {};
     window.location.href.replace(location.hash, '').replace(
-        /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
-        function(m, key, value) { // callback
+        /[?&]+([^=&]+)=?([^&]*)?/gi, 
+        function(m, key, value) { 
             vars[key] = value !== undefined ? value : '';
         }
     );
@@ -42,7 +36,6 @@ function checkColors(foregroundColor, backgroundColor) {
         backgroundHex = backgroundColor;
     }
 
-    // Hex to RGB
     function hexToRgb(hex) {
         var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
         hex = hex.replace(shorthandRegex, function(m, r, g, b) {
@@ -57,7 +50,6 @@ function checkColors(foregroundColor, backgroundColor) {
         } : null;
     }
 
-    // Get RGBA
     var foregroundR = hexToRgb(foregroundHex).r
     var foregroundG = hexToRgb(foregroundHex).g
     var foregroundB = hexToRgb(foregroundHex).b
@@ -67,13 +59,6 @@ function checkColors(foregroundColor, backgroundColor) {
     var backgroundG = hexToRgb(backgroundHex).g
     var backgroundB = hexToRgb(backgroundHex).b
     var backgroundColorRgba = ["" + backgroundR + "", "" + backgroundG + "", "" + backgroundB + "", "1"]
-
-    // console.log(foregroundColorRgba);
-    //
-    // console.log(backgroundR);
-    // console.log(backgroundG);
-    // console.log(backgroundB);
-    // console.log(backgroundColorRgba);
 
     function luma(rgbaColor) {
         for (var i = 0; i < 3; i++) {
@@ -87,9 +72,6 @@ function checkColors(foregroundColor, backgroundColor) {
 
     var foregroundLuma = luma(foregroundColorRgba);
     var backgroundLuma = luma(backgroundColorRgba);
-
-    // console.log(foregroundLuma);
-    // console.log(backgroundLuma);
 
     function checkContrast() {
         foregroundLuma = foregroundLuma + 0.05
