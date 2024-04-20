@@ -18,7 +18,7 @@ Chrominance is a Chrome based browser extension, developed with Vanilla JS and T
 Clone the project
 
 ```bash
-  git clone https://github.com/v-iinh/Chrominance.git
+  git clone https://github.com/v-iinh/chrominance.git
 ```
 
   Turn on Developer Mode
