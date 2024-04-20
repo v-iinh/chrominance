@@ -3,13 +3,14 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('palette').addEventListener('click', clickedPalette);
     document.getElementById('contrast').addEventListener('click', clickedContrast);
     document.getElementById('theme').addEventListener('click', clickedTheme);
-    document.getElementById('gradient').addEventListener('click', clickedGradient);
 });
 
 function resetIcons() {
     document.querySelectorAll('.nav i').forEach(icon => {
         icon.style.color = "#75797e";
         document.querySelector('.pcr-app.visible').style.display = 'flex';
+        document.body.style.height = "233px"
+        document.querySelector('.parent_1').style.display = 'flex';
         document.querySelector('.parent_2').style.display = 'none'; 
         document.getElementById("row1").style.display = "flex";
         document.getElementById("row2").style.display = "flex";
@@ -142,13 +143,12 @@ async function changeBackgroundColor() {
 function clickedTheme() {
     resetIcons(); 
     document.querySelector('#theme i').style.color = "#4285f4"; 
-
+    document.querySelector('.pcr-app.visible').style.display = 'none';
+    document.querySelector('.parent_1').style.display = 'none'; 
+    document.getElementById("row1").style.display = "none";
+    document.getElementById("row2").style.display = "none";
+    document.body.style.height = "50px";
     changeBackgroundColor();
-}
-
-function clickedGradient() {
-    resetIcons();
-    document.querySelector('#gradient i').style.color = "#4285f4";
 }
 
 const hexToRgb = function(hex) {
